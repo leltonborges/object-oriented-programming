@@ -6,7 +6,7 @@
 
 Para exemplificar, pense em um carro, no qual o motorista tem acesso ao volante, embreagem, caixa de marcha, entre outros, todas essas funcionalidades são acessível, exposta para o motorista fazer o carro funcionar e andar, mas existe coisas que não são necessárias o motorista sabem para dirigir o veiculo, com toda a parte mecânica, como o motor, o sistema elétrico, a queima de combustível, esta parte esta escondidas (encapsulada) do motorista, não à necessidade o motorista conhece ou ver acontecendo para dirigir. Desta forma isso se chama de **encapsulamento**, esconder e proteger o sistema do motorista e vice-versa, **expondo** somente o necessário para o funcionamento.
 
-![](https://2.bp.blogspot.com/-01oyUkStQYg/Wmel1eUo2oI/AAAAAAAAA5g/Ny9yX7irulIVxAYXv5ZyAeUq5IKC42EWQCEwYBhgL/s320/acessibilidade-0.png)
+![fonte: Tecnopode](https://2.bp.blogspot.com/-01oyUkStQYg/Wmel1eUo2oI/AAAAAAAAA5g/Ny9yX7irulIVxAYXv5ZyAeUq5IKC42EWQCEwYBhgL/s320/acessibilidade-0.png)
 
 ## Tipos de visibilidade
 
@@ -23,7 +23,7 @@ Para exemplificar, pense em um carro, no qual o motorista tem acesso ao volante,
 
 ### Protected
 
-+ Acessível por **[herança](#heranca)**
++ Acessível por **[herança](#herança)**
 + O membro **protected** é acessível à classe e a suas subclasses;
 + A intenção é dar acesso ao programadores que estenderão sua classe.
 
@@ -35,10 +35,41 @@ Para exemplificar, pense em um carro, no qual o motorista tem acesso ao volante,
 + É usado para permitir acesso mais liberal, mas somente dentro de um mundo controlado e não pelo usuários da classe;
 + Deve-se ter cuidado com a visibilidade **default** para atributos pois pode abrir muito o acesso, principalmente em **package** grandes.
 
+![fonte: Mauda](https://lh3.googleusercontent.com/gspCYElnrB3pnTgduNtUzMccPVzvEVYSQfAgph7CfUw8bMYh1FUFdr9v5F5X4zvUA5g4MSAMPTAV1KZNnDaIeTWTufiEI1GkTvg8OAV2sRKj4l7VlZM11rcIu62IhS3r6d7RMg)
 
-## Herança
+## Herança ##
+
+> ***Devmedia***
+>
+> A herança é um mecanismo da Orientação a Objeto que permite criar novas classes a partir de classes já existentes, aproveitando-se das características existentes na classe a ser estendida. Este mecanismo é muito interessante, pois promove um grande reúso e reaproveitamento de código existente. Com a herança é possível criar classes derivadas, subclasses, a partir de classes bases, superclasses. As subclasses são mais especializadas do que as suas superclasses, mais genéricas. As subclasses herdam todas as características de suas superclasses, como suas variáveis e métodos. A linguagem Java permite o uso de herança simples, mas não permite a implementação de herança múltipla. Para superar essa limitação o Java faz uso de interfaces, o qual pode ser visto como uma “promessa”que certos métodos com características previamente estabelecidas serão implementados, usando inclusive a palavra reservada **implements** para garantir esta implementação. As interfaces possuem sintaxe similar as classes, no entanto apresentam apenas a especificação das funcionalidades que uma classe deve conter, sem determinar como essa funcionalidade deve ser implementada. Apresentam apenas protótipos dos métodos.
+
+![fonte: testeavelocidade](https://www.testeavelocidade.com.br/wp-content/uploads/2020/06/h1-1.jpg)
 
 ## Polimorfismo
 
+> *Polimorfismo é o princípio pelo qual duas ou mais classes derivadas de uma mesma superclasse podem invocar métodos que têm a mesma identificação (assinatura) mas comportamentos distintos, especializados para cada classe derivada, usando para tanto uma referência a um objeto do tipo da superclasse. A decisão sobre qual o método que deve ser selecionado, de acordo com o tipo da classe derivada, é tomada em tempo de execução, através do mecanismo de [ligação tardia](#ligação-tardia).*
+
+- **Polimorfismo Estático** ou **Sobrecarga**
+- **Polimorfismo Dinâmico** ou **Sobreposição**
+
+O **Polimorfismo Estático** se dá quando temos a mesma operação implementada várias vezes na mesma classe. A escolha de qual operação será chamada depende da assinatura dos métodos sobrecarregados.
+
+O **Polimorfismo Dinâmico** acontece na **[herança](#herança)**, quando a subclasse sobrepõe o método original. Agora o método escolhido se dá em tempo de execução e não mais em tempo de compilação. A escolha de qual método será chamado depende do tipo do objeto que recebe a mensagem.
+
+![fonte: pensedotnet](https://lh3.googleusercontent.com/proxy/B0N5dKOI22aKGgAvyXeUGtlH4LI9X02qrTLwpNaDchzlBJrhDxB__HgmBQhPKndzgdVZSqW9gu_-6mdWIqztN5QuxLT-bNRIbLXCj7pnV3b0S_xxR0bwkgNqJEUYgLo7XbUtBURD7tLVcPMA7mawLXgM3Vo5nIkZ5xZ1f2M2xsDGNsE-xvrXF-X9HavVtfbXMV1Y0O-d8R4i7rHtKj0)
+
 ## Abstração
+
+
+
+## Ligação tardia
+
+Quando o método a ser invocado é definido durante a compilação do programa, o mecanismo de **ligação prematura** *(early binding)* é utilizado.
+
+Para a utilização de polimorfismo, a linguagem de programação orientada a objetos deve suportar o conceito de **ligação tardia** *(late binding)*, onde a definição do método que será efetivamente invocado só ocorre durante a execução do programa. O mecanismo de ligação tardia também é conhecido pelos termos *dynamic binding* ou *run-time binding*.
+
+Em Java, todas as determinações de métodos a executar ocorrem através de ligação tardia exceto em dois casos:
+
+1. métodos declarados como `final` não podem ser redefinidos e portanto não são passíveis de invocação polimórfica da parte de seus descendentes; e
+2. métodos declarados como `private` são implicitamente finais.
 
