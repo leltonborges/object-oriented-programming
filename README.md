@@ -6,11 +6,11 @@
 
 Para exemplificar, pense em um carro, no qual o motorista tem acesso ao volante, embreagem, caixa de marcha, entre outros, todas essas funcionalidades são acessível, exposta para o motorista fazer o carro funcionar e andar, mas existe coisas que não são necessárias o motorista sabem para dirigir o veiculo, com toda a parte mecânica, como o motor, o sistema elétrico, a queima de combustível, esta parte esta escondidas (encapsulada) do motorista, não à necessidade o motorista conhece ou ver acontecendo para dirigir. Desta forma isso se chama de **encapsulamento**, esconder e proteger o sistema do motorista e vice-versa, **expondo** somente o necessário para o funcionamento.
 
-![fonte: Tecnopode](https://2.bp.blogspot.com/-01oyUkStQYg/Wmel1eUo2oI/AAAAAAAAA5g/Ny9yX7irulIVxAYXv5ZyAeUq5IKC42EWQCEwYBhgL/s320/acessibilidade-0.png)
+<img src="https://2.bp.blogspot.com/-01oyUkStQYg/Wmel1eUo2oI/AAAAAAAAA5g/Ny9yX7irulIVxAYXv5ZyAeUq5IKC42EWQCEwYBhgL/s320/acessibilidade-0.png" alt="fonte: Tecnopode" style="zoom:100%; align: center;" />
 
 ## Tipos de visibilidade
 
-### Public
+Public
 
 + Quem tem acesso à classe tem acesso também a qualquer membro com visibilidade **public**;
 + O alvo aqui é o programador cliente que usa suas classes;
@@ -35,7 +35,7 @@ Para exemplificar, pense em um carro, no qual o motorista tem acesso ao volante,
 + É usado para permitir acesso mais liberal, mas somente dentro de um mundo controlado e não pelo usuários da classe;
 + Deve-se ter cuidado com a visibilidade **default** para atributos pois pode abrir muito o acesso, principalmente em **package** grandes.
 
-![fonte: Mauda](https://lh3.googleusercontent.com/gspCYElnrB3pnTgduNtUzMccPVzvEVYSQfAgph7CfUw8bMYh1FUFdr9v5F5X4zvUA5g4MSAMPTAV1KZNnDaIeTWTufiEI1GkTvg8OAV2sRKj4l7VlZM11rcIu62IhS3r6d7RMg)
+<img src="https://lh3.googleusercontent.com/gspCYElnrB3pnTgduNtUzMccPVzvEVYSQfAgph7CfUw8bMYh1FUFdr9v5F5X4zvUA5g4MSAMPTAV1KZNnDaIeTWTufiEI1GkTvg8OAV2sRKj4l7VlZM11rcIu62IhS3r6d7RMg" alt="fonte: Mauda" style="align: center;" />
 
 ## Herança ##
 
@@ -43,7 +43,7 @@ Para exemplificar, pense em um carro, no qual o motorista tem acesso ao volante,
 >
 > A herança é um mecanismo da Orientação a Objeto que permite criar novas classes a partir de classes já existentes, aproveitando-se das características existentes na classe a ser estendida. Este mecanismo é muito interessante, pois promove um grande reúso e reaproveitamento de código existente. Com a herança é possível criar classes derivadas, subclasses, a partir de classes bases, superclasses. As subclasses são mais especializadas do que as suas superclasses, mais genéricas. As subclasses herdam todas as características de suas superclasses, como suas variáveis e métodos. A linguagem Java permite o uso de herança simples, mas não permite a implementação de herança múltipla. Para superar essa limitação o Java faz uso de interfaces, o qual pode ser visto como uma “promessa”que certos métodos com características previamente estabelecidas serão implementados, usando inclusive a palavra reservada **implements** para garantir esta implementação. As interfaces possuem sintaxe similar as classes, no entanto apresentam apenas a especificação das funcionalidades que uma classe deve conter, sem determinar como essa funcionalidade deve ser implementada. Apresentam apenas protótipos dos métodos.
 
-![fonte: testeavelocidade](https://www.testeavelocidade.com.br/wp-content/uploads/2020/06/h1-1.jpg)
+<img src="https://www.testeavelocidade.com.br/wp-content/uploads/2020/06/h1-1.jpg" alt="fonte: testeavelocidade" style="align: center;" />
 
 ## Polimorfismo
 
@@ -56,11 +56,13 @@ O **Polimorfismo Estático** se dá quando temos a mesma operação implementada
 
 O **Polimorfismo Dinâmico** acontece na **[herança](#herança)**, quando a subclasse sobrepõe o método original. Agora o método escolhido se dá em tempo de execução e não mais em tempo de compilação. A escolha de qual método será chamado depende do tipo do objeto que recebe a mensagem.
 
-![fonte: pensedotnet](https://lh3.googleusercontent.com/proxy/B0N5dKOI22aKGgAvyXeUGtlH4LI9X02qrTLwpNaDchzlBJrhDxB__HgmBQhPKndzgdVZSqW9gu_-6mdWIqztN5QuxLT-bNRIbLXCj7pnV3b0S_xxR0bwkgNqJEUYgLo7XbUtBURD7tLVcPMA7mawLXgM3Vo5nIkZ5xZ1f2M2xsDGNsE-xvrXF-X9HavVtfbXMV1Y0O-d8R4i7rHtKj0)
+<img src="https://lh3.googleusercontent.com/proxy/B0N5dKOI22aKGgAvyXeUGtlH4LI9X02qrTLwpNaDchzlBJrhDxB__HgmBQhPKndzgdVZSqW9gu_-6mdWIqztN5QuxLT-bNRIbLXCj7pnV3b0S_xxR0bwkgNqJEUYgLo7XbUtBURD7tLVcPMA7mawLXgM3Vo5nIkZ5xZ1f2M2xsDGNsE-xvrXF-X9HavVtfbXMV1Y0O-d8R4i7rHtKj0" alt="Fonte: pensedotnet" style="align: center;" />
 
 ## Abstração
 
+> É a habilidade de concentrar nos aspectos essenciais de um contexto qualquer, ignorando características menos importantes ou acidentais. Em modelagem orientada a objetos, uma classe é uma **abstração** de entidades existentes no domínio do sistema de software.
 
+Em outras palavras, é pegar um conceito do mundo real e simplificar para o seu software, também pode ser entendida como uma **simplificação**.
 
 ## Ligação tardia
 
