@@ -64,6 +64,7 @@ O **Polimorfismo Dinâmico** acontece na **[herança](#herança)**, quando a sub
 
 Em outras palavras, é pegar um conceito do mundo real e simplificar para o seu software, também pode ser entendida como uma **simplificação**.
 
+
 ## Ligação tardia
 
 Quando o método a ser invocado é definido durante a compilação do programa, o mecanismo de **ligação prematura** *(early binding)* é utilizado.
@@ -75,3 +76,8 @@ Em Java, todas as determinações de métodos a executar ocorrem através de lig
 1. métodos declarados como `final` não podem ser redefinidos e portanto não são passíveis de invocação polimórfica da parte de seus descendentes; e
 2. métodos declarados como `private` são implicitamente finais.
 
+# Enum
+
+<img src="https://i.imgur.com/IXAPeJC.png" alt="Fonte: carbon" style="zoom:60%;" />
+
+São tipos de campos que consistem em um conjunto fixo de constantes (static final), sendo como uma lista de valores pré-definidos. Na linguagem de programação **Java**, pode ser definido um tipo de enumeração usando a palavra chave **enum**. Todos os tipos **enums** implicitamente estendem a classe **java**.
