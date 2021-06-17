@@ -1,6 +1,10 @@
 package object.oriented.programming.main.enums;
 
 public class Monster extends Player{
+	
+	public Monster() {
+		super(0, 0);
+	}
 
 	@Override
 	boolean attack(Player otherPlayer) {

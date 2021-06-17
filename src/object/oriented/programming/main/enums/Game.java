@@ -3,9 +3,7 @@ package object.oriented.programming.main.enums;
 public class Game {
 
 	public static void main(String[] args) {
-		Player hero = new Hero();
-		hero.x = 10;
-		hero.y = 10;
+		Player hero = new Hero(10, 10);
 
 		Player monster = new Monster();
 		monster.x = 10;
