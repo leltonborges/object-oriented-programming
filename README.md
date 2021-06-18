@@ -56,7 +56,7 @@ O **Polimorfismo Estático** se dá quando temos a mesma operação implementada
 
 O **Polimorfismo Dinâmico** acontece na **[herança](#herança)**, quando a subclasse sobrepõe o método original. Agora o método escolhido se dá em tempo de execução e não mais em tempo de compilação. A escolha de qual método será chamado depende do tipo do objeto que recebe a mensagem.
 
-<img src="https://lh3.googleusercontent.com/proxy/B0N5dKOI22aKGgAvyXeUGtlH4LI9X02qrTLwpNaDchzlBJrhDxB__HgmBQhPKndzgdVZSqW9gu_-6mdWIqztN5QuxLT-bNRIbLXCj7pnV3b0S_xxR0bwkgNqJEUYgLo7XbUtBURD7tLVcPMA7mawLXgM3Vo5nIkZ5xZ1f2M2xsDGNsE-xvrXF-X9HavVtfbXMV1Y0O-d8R4i7rHtKj0" alt="Fonte: pensedotnet" style="align: center;" />
+<img src="https://image.slidesharecdn.com/polimorfismo-100526222948-phpapp02/95/polimorfismo-8-728.jpg?cb=1274913023" alt="Fonte: SlideShare" style="align: center;" />
 
 ## Abstração
 
@@ -81,3 +81,69 @@ Em Java, todas as determinações de métodos a executar ocorrem através de lig
 <img src="https://i.imgur.com/IXAPeJC.png" alt="Fonte: carbon" style="zoom:60%;" />
 
 São tipos de campos que consistem em um conjunto fixo de constantes (static final), sendo como uma lista de valores pré-definidos. Na linguagem de programação **Java**, pode ser definido um tipo de enumeração usando a palavra chave **enum**. Todos os tipos **enums** implicitamente estendem a classe **java**.
+
+# Interfaces
+
+Uma interface java têm como objetivo principal criar um "**contrato**" onde a Classe que a implementa deve obrigatoriamente obedecer, exemplo:
+
+```java
+public interface FirstInterface{
+    public void method1();
+    Integer method2();
+    void method3(Integer number);
+}
+```
+
+Uma interface não têm copo, apenas assinatura, onde todos os métodos será sempre público. Agora faremos um **contrato** que deve ser seguido caso alguma classe à implemente, exemplo:
+
+```java
+public class FistClass implements FirstInterface{
+    
+    @Override
+    public void method1(){
+        // TODO auto-gererated
+    }
+    
+    @Override
+    public Integer method2(){
+        // TODO auto-gererated
+    }
+    
+    @Override
+    public void method3(Integer number){
+        // TODO auto-gererated
+    }
+}
+```
+
+A interface é muito utilizada em grandes projetos para obrigar o programador seguir o padrão do projeto, por esta tratar-se de um contrato onde o mesmo é obrigado a implementar seus métodos.  E quando bem utilizada, a interface acaba tornando-se uma poderosa ferramenta nas mãos de um programador ou Analista, e torna-se indispensável o seu uso no dia-a-dia. As boas práticas de programação regem que o uso da Interface é indispensável para um bom projeto de software
+
+# Classes abstratas 
+
+Uma classe abstrata é um **"modelo"** para outras classes que dela herdem, não podendo ser instanciada por si só. Para ter um objeto de uma classe abstrata é necessário criar uma classe mais especializada herdando dela e então instanciar essa nova classe. Classe abstrata pode ter método abstrato, no qual, não terá corpo e a classe herdeira é obrigada implementar, **sobrescrito**.
+
+```java
+public abstract class Animal {
+    private int idade;
+    
+    public void emitirSOm(){
+        System.out.println("HUMM");
+    }
+
+    //Método abstrato
+	public abstract void tipoAlimentar();
+}
+```
+Classe filha
+
+~~~java
+public class Cachorro extends Animal{
+    
+    //Método obrigatório a implementação
+    @Override
+    public void tipoAlimentar(){
+        System.out.println("Alimenta-se de carne");
+    }
+}
+~~~
+

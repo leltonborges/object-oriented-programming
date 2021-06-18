@@ -1,6 +1,6 @@
 package object.oriented.programming.main.heranca;
 
-public class Car {
+public abstract class Car {
 
 	String color;
 	boolean onOrOff;
@@ -51,8 +51,6 @@ public class Car {
 
 	}
 	
-	public  void turboOn() {
-		// default
-	}
+	public abstract void turboOn();
 }
 
