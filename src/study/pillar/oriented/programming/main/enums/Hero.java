@@ -1,4 +1,4 @@
-package object.oriented.programming.main.enums;
+package study.pillar.oriented.programming.main.enums;
 
 public class Hero extends Player {
 	public Hero(int x, int y) {

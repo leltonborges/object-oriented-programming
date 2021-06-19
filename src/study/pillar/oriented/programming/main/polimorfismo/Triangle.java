@@ -1,4 +1,4 @@
-package object.oriented.programming.main.polimorfismo;
+package study.pillar.oriented.programming.main.polimorfismo;
 
 public class Triangle extends Shape {
 

@@ -1,6 +1,6 @@
-package object.oriented.programming.main.heranca;
+package study.pillar.oriented.programming.main.heranca;
 
-import object.oriented.programming.main.heranca.interfaces.Sport;
+import study.pillar.oriented.programming.main.heranca.interfaces.Sport;
 
 public class Civic extends Car implements Sport{
 
