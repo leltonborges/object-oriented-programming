@@ -90,11 +90,11 @@ Uma interface java têm como objetivo principal criar um "**contrato**" onde a C
 public interface FirstInterface{
     public void method1();
     Integer method2();
-    void method3(Integer number);
+    public abstract void method3(Integer number);
 }
 ```
 
-Uma interface não têm copo, apenas assinatura, onde todos os métodos será sempre público. Agora faremos um **contrato** que deve ser seguido caso alguma classe à implemente, exemplo:
+Uma interface não têm copo, apenas assinatura, onde todos os métodos será sempre *público* e *abstratos*, por mais que o programador não coloque-os no corpo do método. Agora faremos um **contrato** que deve ser seguido caso alguma classe à implemente, exemplo:
 
 ```java
 public class FistClass implements FirstInterface{
