@@ -1,4 +1,4 @@
-package study.lambdas.examplo;
+package study.lambda.main.examplo;
 
 public class Mult implements Calc{
 

@@ -32,5 +32,15 @@ public class CalcTest1 {
 }
 ```
 
+## Interface Funcional
 
+É um **interface** que possui um único método abstrato. E é através delas que podemos usar as expressões lambdas, ou seja, podemos dizer que uma expressão lambda representa a implementação do método abstrato de uma **interface funcional**.
 
+```java
+@FunctionalInterface
+public interface Calc {	
+	double execute(double a, double b);
+}
+```
+
+Toda **Interface funcional** pode ser acompanhada da anotação `@FunctionalInterface`, qual está anotação irá informar ao compilador que está interface só pode existir um único método, e se por acaso o programador tentar adicionar mais de um método na **interface** o *automatic complication* dará erro. `@FunctionalInterface` força ter um único método abstract.
