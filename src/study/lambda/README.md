@@ -66,7 +66,7 @@ public interface Calc {
 
 Existe diversas interfaces funcionais já pré definida na linguagem java, e todo elas só receber **Wrapper** do seu tipo primitivo, ou seja, não aceitar `int, double, float, char, boolean` como tipo de parâmetro, mas aceita `Integer, Double, Float, String, Boolean, Character`, ou seja, sempre será uma classe/objeto.
 
-## Interfaces
+## Tipos de Interfaces
 
 O conceito de interface funcional, que contém apenas um método abstrato. Este tipo de Interface é usado em situações específicas, sendo comum a instanciação é através de uma classe anónima. 
 
@@ -77,11 +77,16 @@ Name | Entrada | Return | Leitura
 BiConsumer| <T, U> | nada | Recebe dois parâmetros distintos e sem retorna
 BiFunction | <T, U, R> | < R > | Recebe três parâmetros distintos e retorna o tipo < R > declarado 
 BinaryOperator | <T, T> | < T > | Recebe dois parâmetros iguais e retorna o mesmo tipo
-Supplier | nada | < T > | Não recebe nada e retorna um tipo < T >
+BiPredicate | <T, U> | boolean | Recebe dois parâmentros e retorna booleano 
+BooleanSupplier | nada | boolean | Não recebe nada e retorna booleano 
 Consumer | < T > | nada | Recebe um tipo < T > e não tem retorna 
+DoubleBinaryOperator | <Double, Double> | Double | Recebe dois valores Double e retorna Double. 
+DoubleConsumer | < Double > | nada | Recebe um valor Double e sem retorno. 
+DoubleFunction | < Double > | < R > | Recebe um valor Double e retorna < R > 
 UnaryOperation | < T > | < T > | Recebe um tipo < T > e retorna o mesmo tipo < T > 
 Function | < T, R > | < R > | Recebe um tipo < T > e retorna um tipo < R > 
 Predicate | < T > | boolean | Recebe um tipo < T > e retorna um Boolean 
+Supplier | nada | < T > | Não recebe nada e retorna um tipo < T > 
 
 É possível encadear varias funções de acordo com o retorno da função anterior, que será o valor para a próxima função, e para isso existem métodos para fazer este encadeamento, conhecida como composição de função.
 
@@ -144,12 +149,109 @@ public class Example {
 }
 ```
 
+### Biconsumer<T, U>
+
+Recebe dois valores distintos <T, U> e não possui retorno.
+
+```java
+BiConsumer<String, Integer> result = (name, age) -> 
+    System.out.println("Nome: " + name + ", Idade: " + age);
+
+result.accept("Alex", 33); //Nome: Alex, idade: 32
+```
+
+### BiFunction<T,U,R>
+
+Recebe dois valores distintos <T, U> e retorna um outro tipo \< R >
+
+```java
+BiFunction<Double, Double, String> result = (n1, n2) 
+				-> (n1 + n2) / 2 >= 7 ? "Aprovado": "Reprovado";
+				
+System.out.println(result.apply(7.7, 6.7));
+```
+
 ### BinaryOperator<T>
 
-É uma **interface funcional** que recebe dois operando de mesmo tipo e retorna o mesmo tipo.
+É uma **interface funcional** que recebe dois operando de mesmo tipo e tem retorno do mesmo tipo.
 
 ```java
 // Recebe dois valores Double e retorna Double
 BinaryOperator<Double> mult = (x, y) -> x * y;
+```
+
+### BiPredicate<T, U>
+
+Recebe dois parâmetros distintos <T, U> e têm retorno boolean.
+
+```java
+BiPredicate<Double, String> result = (note, name) 
+				-> note > 6;	
+System.out.println(result.test(7.0, "Marcos"));
+```
+
+### BooleanSupplier
+
+Representa um *Supplier* que não recebe parâmetro e retorna um valor booleano.
+
+```java
+Integer num = 0;
+BooleanSupplier isNull = () -> num != null; 
+System.out.println(isNull.getAsBoolean());
+```
+
+### Consumer<T>
+
+Recebe um valor e não possui retorno.
+
+```java
+Consumer<Product> print = p -> System.out.println(p.getName());
+		
+Product p1 = new Product("Rice", 40.00, 0.9);
+Product p2 = new Product("Notebook", 3999.00, 0.8);
+		
+List<Product> listProduct = 
+	Arrays.asList(
+		new Product("Rice", 40.00, 0.9),
+		new Product("Notebook", 3999.00, 0.8),
+		new Product("Lapis", 1.89, 0.9),
+		new Product("Papel", 0.9, 0.8));
+		
+print.accept(p1);
+print.accept(p2);
+System.out.println();
+		
+listProduct.forEach(print);
+```
+
+### DoubleBinaryOperator
+
+Recebe dois valores Double e têm retorno do mesmo tipo.
+
+```java
+DoubleBinaryOperator num = (n1, n2) -> n1 / n2;
+System.out.println(num.applyAsDouble(16, 4));
+```
+
+### DoubleConsumer
+
+Recebe um valor Double e não tem returno
+
+```java
+DoubleConsumer num = n1 -> {
+			boolean isN = n1 % 2 == 0;
+			System.out.println(isN == true ? n1 +" é par" : n1 + " é impar");
+		};
+		
+num.accept(18);
+```
+
+### DoubleFunction< R >
+
+Recebe um valor Double e retorna < R >.
+
+```java
+DoubleFunction<String> sum = (n1) -> "Numero: " + n1;
+System.out.println(sum.apply(32));
 ```
 

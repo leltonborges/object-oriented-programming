@@ -16,6 +16,7 @@ public class UnaryOperatorExample {
 		Integer result2 = squared.compose(multTwo).compose(moreTwo).apply(0);
 		
 		System.out.println(result1);
+		System.out.println(result2);
 	}
 
 }
