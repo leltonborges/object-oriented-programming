@@ -16,6 +16,9 @@ public class CalcTest2 {
 		
 		System.out.println(sum.execute(2, 3)); // 5.0
 		System.out.println(mult.execute(2, 3)); // 6.0
+		
+		sum.defaulMethod(); // default method
+		System.out.println(Calc.staticMethod()); // static method
 
 	}
 

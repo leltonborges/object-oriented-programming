@@ -44,3 +44,20 @@ public interface Calc {
 ```
 
 Toda **Interface funcional** pode ser acompanhada da anotação `@FunctionalInterface`, qual está anotação irá informar ao compilador que está interface só pode existir um único método, e se por acaso o programador tentar adicionar mais de um método na **interface** o *automatic complication* dará erro. `@FunctionalInterface` força ter um único método abstract.
+
+Cabe ressaltar que, uma função funcional interface usando a anotação `@FunctionalInterface` pode receber dois outros tipos de métodos `default`  e `static` sem causar erros.
+
+```java
+@FunctionalInterface
+public interface Calc {	
+	double execute(double a, double b);
+    
+    default void defaulMethod(){
+        System.out.println("Método default");
+    }
+    
+    static void staticMethod(){
+        System.out.println("Método estático");
+    }
+}
+```
