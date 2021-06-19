@@ -34,6 +34,8 @@ public class CalcTest1 {
 
 ## Interface Funcional
 
+Leia a documentação oficial do java 8 [aqui](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html).
+
 É um **interface** que possui um único método abstrato. E é através delas que podemos usar as expressões lambdas, ou seja, podemos dizer que uma expressão lambda representa a implementação do método abstrato de uma **interface funcional**.
 
 ```java
@@ -61,3 +63,63 @@ public interface Calc {
     }
 }
 ```
+
+Existe diversas interfaces funcionais já pré definida na linguagem java, e todo elas só receber **Wrapper** do seu tipo primitivo, ou seja, não aceitar `int, double, float, char, boolean` como tipo de parâmetro, mas aceita `Integer, Double, Float, String, Boolean, Character` .
+
+## Interfaces
+
+O conceito de interface funcional, que contém apenas um método abstrato. Este tipo de Interface é usado em situações específicas, sendo comum a instanciação é através de uma classe anónima.
+
+Name | Entrada | Return | Leitura
+:-------: | :-------: | :-------: | :-----:
+BiConsumer| <T, U> | nada | Recebe dois parâmetros distintos e sem retorna
+BiFunction | <T, U, R> | < R > | Recebe três parâmetros distintos e retorna o tipo < R > declarado 
+BinaryOperator | <T, T> | < T > | Recebe dois parâmetros iguais e retorna o mesmo tipo
+Supplier | nada | < T > | Não recebe nada e retorna um tipo < T >
+Consumer | < T > | nada | Recebe um tipo < T > e não tem retorna 
+UnaryOperation | < T > | < T > | Recebe um tipo < T > e retorna o mesmo tipo < T > 
+Function | < T, R > | < R > | Recebe um tipo < T > e retorna um tipo < R > 
+Predicate | < T > | boolean | Recebe um tipo < T > e retorna um boolean 
+
+### Foreach
+
+É uma das formas de lê todos os elementos de uma lista e aplicar uma determinada lógica.
+
+```java
+List<String> aprovados = Arrays.asList("Ana", "Bia", "Lia", "Bob", "Alex");
+
+System.out.println("\nLambda");
+//Lambda
+aprovados.forEach( name -> System.out.println(name));
+		
+System.out.println("\nLambda com referencia de método #2");
+// Method reference
+aprovados.forEach(System.out::println);
+```
+
+Também é possível criar métodos personalizados e usa-los como referencia de método, e só se usa referencia quando possui um único parâmetro em qualquer interface funcional.
+
+```java
+public class Example {
+    public static void main(String[] args){
+    
+        // Method reference custom
+		aprovados.forEach(Example::print);
+    }
+ 
+    // Criando uma método de referencia
+    static void print(String value) {
+        System.out.println("Valor impresso é: " + value);
+    }
+}
+```
+
+### BinaryOperator<T>
+
+É uma **interface funcional** que recebe dois operando de mesmo tipo e retorna o mesmo tipo.
+
+```java
+// Recebe dois valores Double e retorna Double
+BinaryOperator<Double> mult = (x, y) -> x * y;
+```
+
