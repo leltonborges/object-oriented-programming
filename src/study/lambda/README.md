@@ -70,7 +70,7 @@ Existe diversas interfaces funcionais já pré definida na linguagem java, e tod
 
 O conceito de interface funcional, que contém apenas um método abstrato. Este tipo de Interface é usado em situações específicas, sendo comum a instanciação é através de uma classe anónima. 
 
-Agora! irei estudar e repassar o meu conhecimento de todas as interfaces funcionais, existe algumas que nunca usei mas irei descreve-las aqui.
+Algumas interfaces funcionais:
 
 Name | Entrada | Return | Leitura
 :-------: | :-------: | :-------: | :-----:
