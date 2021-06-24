@@ -9,7 +9,7 @@ public class FirstStream {
 	public static void main(String[] args) {
 
 		Consumer<String> printString = System.out::println;
-		Consumer<Integer> printInt = System.out::println;
+//		Consumer<Integer> printInt = System.out::println;
 
 		Stream<String> langs = Stream.of("Java", "Lua", "Php", "Go Lang");
 		langs.forEach(printString);
