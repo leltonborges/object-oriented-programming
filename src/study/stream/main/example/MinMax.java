@@ -26,5 +26,8 @@ public class MinMax {
 		
 		listStudents.stream().max(melhorNota).ifPresent(System.out::println);
 		listStudents.stream().min(melhorNota).ifPresent(System.out::println);
+		
+		listStudents.sort(melhorNota);
+		listStudents.forEach(System.out::println);
 	}
 }
